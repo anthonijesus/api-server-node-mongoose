@@ -1,8 +1,7 @@
 const taskSchema = require('../models/tasks');
-const mongoose = require('mongoose');
 
 const createTaskController = async (req, res) => {
-    // Validaciones básicas
+    
     if (!req.body.name || !req.body.description || !req.body.creator) {
         return res.status(400).json({ error: 'Todos los campos son obligatorios' });
     }

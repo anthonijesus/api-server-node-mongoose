@@ -6,12 +6,12 @@ const tasksRouter = require('./routes/tasks');
 
 
 const app = express();
+app.use(express.json());
+app.use(cors()); // Configurar CORS para permitir solicitudes desde el frontend
 
 const port = process.env.PORT || 3001;
 
 // Middlewares
-app.use(cors()); // Configurar CORS para permitir solicitudes desde el frontend
-app.use(express.json());
 app.use('/api', tasksRouter);
 
 
